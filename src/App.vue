@@ -34,27 +34,49 @@
     </v-app-bar>
 
     <v-main>
-      <HelloWorld />
       <Pagination :v-model="pageNumber" :totalItems="100" :pageSize="10" />
+      <TextInput v-model="text" placeholder="search by text" />
+      <Table :movies="movies" />
     </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
 import Pagination from "./components/core/pagination/component.vue";
+import TextInput from "./components/core/input/component.vue";
+import Table from "./components/core/table/component.vue";
 
 export default Vue.extend({
   name: "App",
 
   components: {
-    HelloWorld,
-    Pagination
+    Pagination,
+    TextInput,
+    Table
   },
 
   data: () => ({
-    pageNumber: 1
+    pageNumber: 1,
+    text: "hello:",
+    movies: [
+      {
+        Title: "War of the Bugs or Monsterous Manouvers in a Mushroom Maze",
+        Year: 1981,
+        imdbID: "tt2127390"
+      },
+      {
+        Title:
+          "Unwigged & Unplugged Live Concert DVD: An Evening with Christopher Guest, Michael McKean and Harry Shearer",
+        Year: 2009,
+        imdbID: "tt1496905"
+      },
+      {
+        Title: "The Harry Connick Jr. Christmas Special",
+        Year: 1993,
+        imdbID: "tt3031702"
+      }
+    ]
   })
 });
 </script>
