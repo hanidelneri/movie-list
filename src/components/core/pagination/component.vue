@@ -19,8 +19,6 @@ export default Vue.extend({
   watch: {
     innerValue: {
       handler(newValue) {
-        console.log("changed", newValue);
-
         this.innerValue = newValue;
         this.$emit("input", newValue);
       }
