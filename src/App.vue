@@ -35,6 +35,7 @@
 
     <v-main>
       <HelloWorld />
+      <Pagination :v-model="pageNumber" :totalItems="100" :pageSize="10" />
     </v-main>
   </v-app>
 </template>
@@ -42,16 +43,18 @@
 <script lang="ts">
 import Vue from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
+import Pagination from "./components/core/pagination/component.vue";
 
 export default Vue.extend({
   name: "App",
 
   components: {
-    HelloWorld
+    HelloWorld,
+    Pagination
   },
 
   data: () => ({
-    //
+    pageNumber: 1
   })
 });
 </script>
