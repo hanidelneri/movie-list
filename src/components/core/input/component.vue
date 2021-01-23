@@ -2,7 +2,6 @@
   <v-text-field
     v-model="innerValue"
     clearable
-    outlined
     append-icon="mdi-magnify"
     v-bind="$attrs"
   />
@@ -23,6 +22,11 @@ export default Vue.extend({
       handler(newValue) {
         this.innerValue = newValue;
         this.$emit("input", newValue);
+      }
+    },
+    value: {
+      handler(newValue) {
+        this.innerValue = newValue;
       }
     }
   },
