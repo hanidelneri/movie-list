@@ -8,30 +8,14 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
+import useVModel from "../use-v-model";
 export default Vue.extend({
-  data() {
-    return {
-      innerValue: ""
-    };
-  },
   props: {
     value: String
   },
-  watch: {
-    innerValue: {
-      handler(newValue) {
-        this.innerValue = newValue;
-        this.$emit("input", newValue);
-      }
-    },
-    value: {
-      handler(newValue) {
-        this.innerValue = newValue;
-      }
-    }
-  },
-  mounted() {
-    this.innerValue = this.value;
+  setup(props, { emit }) {
+    const { innerValue } = useVModel(props as { value: string }, emit);
+    return { innerValue };
   }
 });
 </script>
