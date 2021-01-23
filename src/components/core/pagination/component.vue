@@ -7,11 +7,6 @@ import useVModel from "../use-v-model";
 
 export default Vue.extend({
   name: "Pagination",
-  data() {
-    return {
-      innerValue: 1
-    };
-  },
   props: {
     totalItems: Number,
     value: Number,
