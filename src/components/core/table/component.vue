@@ -22,12 +22,11 @@
   </v-data-table>
 </template>
 <script lang="ts">
-import Vue, { PropType } from "vue";
+import { defineComponent, PropType } from "@vue/composition-api";
 import { Movie, TableItem } from "./types";
+import useLocalStorage from "./use-local-storage";
 
-const STORAGE_KEY = "favourite-movies";
-
-export default Vue.extend({
+export default defineComponent({
   data: () => ({
     headers: [
       {
@@ -50,42 +49,30 @@ export default Vue.extend({
         value: "Title",
         sortable: false
       }
-    ],
-    favourites: [] as Movie[]
+    ]
   }),
   props: {
     movies: {
-      type: Array as PropType<Movie[]>
+      type: Array as PropType<Movie[]>,
+      required: true
     },
     isLoading: {
       type: Boolean
     }
   },
-  methods: {
-    getFavouritesFromStorage(): Movie[] {
-      const items = localStorage.getItem(STORAGE_KEY);
-      if (!items) return [];
-      return JSON.parse(items);
-    },
-    AddToFavourite(movie: Movie) {
-      this.favourites.push(movie);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.favourites));
-    },
-    removeFromFavourites(movie: Movie) {
-      const index = this.favourites.findIndex(
-        item => movie.imdbID === item.imdbID
-      );
-      if (index > -1) this.favourites.splice(index, 1);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.favourites));
-    },
-    isFavourite(movie: Movie): boolean {
-      return Boolean(
-        this.favourites.find(item => item.imdbID === movie.imdbID)
-      );
-    }
-  },
-  mounted() {
-    this.favourites = this.getFavouritesFromStorage();
+  setup() {
+    const {
+      favourites,
+      isFavourite,
+      removeFromFavourites,
+      AddToFavourite
+    } = useLocalStorage();
+    return {
+      favourites,
+      isFavourite,
+      removeFromFavourites,
+      AddToFavourite
+    };
   },
   computed: {
     items(): TableItem[] {
