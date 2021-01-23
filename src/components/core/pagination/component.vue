@@ -1,5 +1,5 @@
 <template>
-  <v-pagination v-model="innerValue" :length="length" />
+  <v-pagination v-model="innerValue" :length="length" :total-visible="8" />
 </template>
 <script lang="ts">
 import Vue from "vue";
@@ -21,6 +21,11 @@ export default Vue.extend({
       handler(newValue) {
         this.innerValue = newValue;
         this.$emit("input", newValue);
+      }
+    },
+    value: {
+      handler(newValue) {
+        this.innerValue = newValue;
       }
     }
   },
