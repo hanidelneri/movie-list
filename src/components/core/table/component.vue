@@ -2,6 +2,7 @@
   <v-data-table
     :headers="headers"
     :items="items"
+    :loading="isLoading"
     class="elevation-1"
     hide-default-footer
   >
@@ -55,6 +56,9 @@ export default Vue.extend({
   props: {
     movies: {
       type: Array as PropType<Movie[]>
+    },
+    isLoading: {
+      type: Boolean
     }
   },
   methods: {
