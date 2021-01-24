@@ -18,6 +18,9 @@ export default Vue.extend({
   },
   computed: {
     length(): number {
+      if (!this.totalItems) {
+        return 0;
+      }
       return Math.ceil(this.totalItems / this.pageSize);
     }
   }
