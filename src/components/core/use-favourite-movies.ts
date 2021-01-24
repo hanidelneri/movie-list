@@ -3,7 +3,7 @@ import { Movie } from "./table/types";
 
 const STORAGE_KEY = "favourite-movies";
 
-export default function useFavouriteMovies(search?: Ref, pageNumber?: Ref) {
+export default function useFavouriteMovies() {
   const favourites: Ref<Movie[]> = ref([]);
 
   const getFavouritesFromStorage = (): Movie[] => {
