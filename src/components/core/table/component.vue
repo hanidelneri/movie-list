@@ -24,7 +24,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from "@vue/composition-api";
 import { Movie, TableItem } from "./types";
-import useLocalStorage from "./use-local-storage";
+import useFavouriteMovies from "../use-favourite-movies";
 
 export default defineComponent({
   data: () => ({
@@ -62,13 +62,11 @@ export default defineComponent({
   },
   setup() {
     const {
-      favourites,
       isFavourite,
       removeFromFavourites,
       AddToFavourite
-    } = useLocalStorage();
+    } = useFavouriteMovies();
     return {
-      favourites,
       isFavourite,
       removeFromFavourites,
       AddToFavourite
