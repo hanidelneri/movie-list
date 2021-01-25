@@ -21,6 +21,6 @@ describe("core/input", () => {
     wrapper.vm.$on("input", input);
     const icon = wrapper.find("button.v-icon");
     await icon.trigger("click");
-    expect(input).toHaveBeenCalledWith(null);
+    expect(input).toHaveBeenCalledWith("");
   });
 });

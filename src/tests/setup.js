@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuetify from "vuetify";
-// import CompositionApi from "@vue/composition-api";
+import VueRouter from "vue-router";
 
+Vue.use(VueRouter);
 Vue.use(Vuetify);
-// Vue.use(CompositionApi);

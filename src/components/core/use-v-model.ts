@@ -20,8 +20,10 @@ export default function useVModel(
   });
 
   watch(innerValue, newVal => {
-    innerValue.value = newVal;
-    emit("input", newVal);
+    if (newVal === null) {
+      innerValue.value = "";
+    } else innerValue.value = newVal;
+    emit("input", innerValue.value);
   });
 
   return { innerValue };
