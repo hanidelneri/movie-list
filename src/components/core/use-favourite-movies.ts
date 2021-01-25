@@ -1,7 +1,7 @@
 import { ref, Ref, onMounted } from "@vue/composition-api";
 import { Movie } from "./table/types";
 
-const STORAGE_KEY = "favourite-movies";
+export const STORAGE_KEY = "favourite-movies";
 
 export default function useFavouriteMovies() {
   const favourites: Ref<Movie[]> = ref([]);

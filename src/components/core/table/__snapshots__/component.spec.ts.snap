@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`core/table add to favourites works correctly 1`] = `
+<div class="v-data-table elevation-1 theme--light">
+  <div class="v-data-table__wrapper">
+    <table>
+      <colgroup>
+        <col class="">
+        <col class="">
+        <col class="">
+        <col class="">
+      </colgroup>
+      <thead class="v-data-table-header">
+        <tr>
+          <th role="columnheader" scope="col" aria-label="Favourite" class="text-start"><span>Favourite</span></th>
+          <th role="columnheader" scope="col" aria-label="ID" class="text-start"><span>ID</span></th>
+          <th role="columnheader" scope="col" aria-label="Year" class="text-start"><span>Year</span></th>
+          <th role="columnheader" scope="col" aria-label="Title" class="text-start"><span>Title</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="">
+          <td class="text-start"><button type="button" class="v-icon notranslate v-icon--link mdi mdi-star theme--light yellow--text"></button></td>
+          <td class="text-start">1</td>
+          <td class="text-start">1999</td>
+          <td class="text-start">movie-1</td>
+        </tr>
+        <tr class="">
+          <td class="text-start"><button type="button" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light"></button></td>
+          <td class="text-start">2</td>
+          <td class="text-start">1998</td>
+          <td class="text-start">movie-2</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`core/table remove from favourites works correctly 1`] = `
+<div class="v-data-table elevation-1 theme--light">
+  <div class="v-data-table__wrapper">
+    <table>
+      <colgroup>
+        <col class="">
+        <col class="">
+        <col class="">
+        <col class="">
+      </colgroup>
+      <thead class="v-data-table-header">
+        <tr>
+          <th role="columnheader" scope="col" aria-label="Favourite" class="text-start"><span>Favourite</span></th>
+          <th role="columnheader" scope="col" aria-label="ID" class="text-start"><span>ID</span></th>
+          <th role="columnheader" scope="col" aria-label="Year" class="text-start"><span>Year</span></th>
+          <th role="columnheader" scope="col" aria-label="Title" class="text-start"><span>Title</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="">
+          <td class="text-start"><button type="button" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light"></button></td>
+          <td class="text-start">1</td>
+          <td class="text-start">1999</td>
+          <td class="text-start">movie-1</td>
+        </tr>
+        <tr class="">
+          <td class="text-start"><button type="button" class="v-icon notranslate v-icon--link mdi mdi-star-outline theme--light"></button></td>
+          <td class="text-start">2</td>
+          <td class="text-start">1998</td>
+          <td class="text-start">movie-2</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
