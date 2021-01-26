@@ -2,6 +2,7 @@ import { toRef, ref, Ref, watch, onMounted } from "@vue/composition-api";
 
 export default function useVModel(
   props: { value: string | number },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   emit: (event: string, ...args: any[]) => void
 ) {
   const value = toRef(props, "value");
