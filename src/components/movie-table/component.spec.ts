@@ -21,4 +21,14 @@ describe("movie-table", () => {
     await input.setValue("title");
     expect(axios.get).toHaveBeenCalledTimes(2);
   });
+
+  test("should fetch data on page number value change", async () => {
+    const wrapper = mount(MovieTable);
+    await wrapper.vm.$nextTick();
+    const navigation = wrapper.findAll(".v-pagination__item").wrappers[1];
+    await navigation.trigger("click");
+    expect(axios.get).toHaveBeenCalledWith(
+      "https://jsonmock.hackerrank.com/api/movies/search/?Title=&page=2"
+    );
+  });
 });
